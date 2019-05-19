@@ -3,8 +3,6 @@
 */
 package main
 
-import "fmt"
-
 // Node ...
 type Node struct {
 	v int64
@@ -12,7 +10,7 @@ type Node struct {
 }
 
 func makeChain(arr []int64) *Node {
-	var pre = &Node{}
+	var pre *Node
 	var head *Node
 	for k, va := range arr {
 		n := &Node{v: va}
@@ -21,7 +19,7 @@ func makeChain(arr []int64) *Node {
 			head = n
 		} else {
 			pre.p = n
-			pre = pre.p
+			pre = n
 		}
 	}
 	return head
@@ -42,7 +40,7 @@ func cal(head1 *Node, head2 *Node) {
 		if p1.v < p2.v {
 			p1 = p1.p
 		} else if p1.v == p2.v {
-			fmt.Println(p1.v)
+			println(p1.v)
 			p1 = p1.p
 			p2 = p2.p
 		} else {
