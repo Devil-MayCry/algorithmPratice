@@ -48,6 +48,25 @@ func MakeTwoWayChain(arr []int64) *TwoWayNode {
 	return head
 }
 
+// MakeCircleChain 构造循环链表
+func MakeCircleChain(arr []int64) *Node {
+	var pre *Node
+	var head *Node
+	var tail *Node
+	for k, va := range arr {
+		tail = &Node{V: va}
+		if k == 0 {
+			pre = tail
+			head = tail
+		} else {
+			pre.Next = tail
+			pre = tail
+		}
+	}
+	tail.Next = head
+	return head
+}
+
 // FindListLen 计算链表长度
 func (h *Node) FindListLen() int {
 	if h == nil {
