@@ -97,6 +97,10 @@ func (h *TwoWayNode) FindListLen() int {
 
 // PrintlnList 打印单向链表
 func (h *Node) PrintlnList() {
+	if h.Next == nil {
+		println(h.V)
+		return
+	}
 	for h.Next != nil {
 		println(h.V)
 		h = h.Next
@@ -108,6 +112,10 @@ func (h *Node) PrintlnList() {
 
 // PrintlnList 打印双向链表
 func (h *TwoWayNode) PrintlnList() {
+	if h.Next == nil {
+		println(h.V)
+		return
+	}
 	for h.Next != nil {
 		println(h.V)
 		h = h.Next
