@@ -7,3 +7,11 @@ func Max(a int64, b int64) int64 {
 	}
 	return b
 }
+
+// Min ...
+func Min(a int64, b int64) int64 {
+	if a < b {
+		return a
+	}
+	return b
+}
