@@ -73,3 +73,11 @@ func Make2DArr(row int, col int) [][]int {
 	}
 	return res
 }
+
+// TriCalcuInt 三目运算
+func TriCalcuInt(b bool, x int, y int) int {
+	if b {
+		return x
+	}
+	return y
+}
